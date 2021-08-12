@@ -1,80 +1,77 @@
-Laravel 8 version - Cuba Theme Support 
+[![Build Status](https://travis-ci.com/hansenmakangiras/e-pajak.svg?branch=master)](https://travis-ci.com/hansenmakangiras/e-pajak)
+[![StyleCI](https://github.styleci.io/repos/395412757/shield?branch=master)](https://github.styleci.io/repos/395412757)
 
-1) Laravel Jetstream.  ( https://jetstream.laravel.com/1.x/introduction.html#laravel-jetstream )
-2) Livewire + Blade   ( https://jetstream.laravel.com/1.x/introduction.html#livewire-blade) or without Jetstream ( https://laravel-livewire.com/docs/2.x/quickstart)
-3) Inertia.js + Vue   ( https://jetstream.laravel.com/1.x/introduction.html#livewire-blade) or without Jetstream ( https://inertiajs.com/ )
-4) ui:auth
-   ui vue
-   ui react
+<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
+# SISTEM INFORMASI PAJAK ONLINE - ESPPT PBB ONLINE
 
-    //  Language use a middleware
-    * web.php  - Route::get('lang/{locale}', function ($locale) {
-    * http/kernel.php
-   		protected $middlewareGroups = [
-        	'web' => [
-   				\App\Http\Middleware\Localization::class,
-   			],
+## Installation Quick Start
+
+1. Download the latest theme source from the Marketplace.
 
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+2. Download and install `Node.js` from Nodejs. The suggested version to install is `14.16.x LTS`.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
 
-## About Laravel
+3. Start a command prompt window or terminal and change directory to [unpacked path]:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+4. Install the latest `NPM`:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+        npm install --global npm@latest
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+5. To install `Composer` globally, download the installer from https://getcomposer.org/download/ Verify that Composer in successfully installed, and version of installed Composer will appear:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+        composer --version
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+6. Install `Composer` dependencies.
 
-### Premium Partners
+        composer install
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
+7. Install `NPM` dependencies.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+        npm install
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+8. The below command will compile all the assets(sass, js, media) to public folder:
 
-## Security Vulnerabilities
+        npm run dev
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+9. Copy `.env.example` file and create duplicate. Use `cp` command for Linux or Max user.
+
+        cp .env.example .env
+
+   If you are using `Windows`, use `copy` instead of `cp`.
+
+        copy .env.example .env
+
+
+10. Create a table in MySQL database and fill the database details `DB_DATABASE` in `.env` file.
+
+
+12. The below command will create tables into database using Laravel migration and seeder.
+
+        php artisan migrate:fresh --seed
+
+
+13. Generate your application encryption key:
+
+        php artisan key:generate
+
+
+14. Start the localhost server:
+
+        php artisan serve
+
+## Documentation
+For setup, usage guidance, and all other docs - please consult the [Project Wiki](https://github.com/hansenmakangiras/pajak-online/wiki).
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This boilerplate, much like the Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
